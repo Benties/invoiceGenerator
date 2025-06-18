@@ -90,9 +90,9 @@ const populateDailyActionsAndSummary = async (parentId, clientId, claimsOptions,
         extraDailyQuery = ""
     }
     if (parentId !== "" && parentId > 0) {
-        queryParam = `({'82'.EX.${parentId}}OR({'82'.XCT.${parentId}}AND{'68'.EX.${parentId}}))${extraDailyQuery}AND{'8'.OAF.'6/1/23'} AND {'9'.EX.'Closed'}AND{'66'.EX.'false'}`
+        queryParam = `({'82'.EX.${parentId}}OR({'82'.EX.''}AND{'68'.EX.${parentId}}))${extraDailyQuery}AND{'8'.OAF.'6/1/23'} AND {'9'.EX.'Closed'}AND{'66'.EX.'false'}`
     } else {
-        queryParam = `({'81'.EX.${clientId}}OR({'81'.XCT.${clientId}}AND{'64'.EX.${clientId}}))${extraDailyQuery}AND{'8'.OAF.'6/1/23'} AND {9.EX.'Closed'} AND{'66'.EX.'false'}`
+        queryParam = `({'81'.EX.${clientId}}OR({'81'.EX.''}AND{'64'.EX.${clientId}}))${extraDailyQuery}AND{'8'.OAF.'6/1/23'} AND {9.EX.'Closed'} AND{'66'.EX.'false'}`
     }
 
 

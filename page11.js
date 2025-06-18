@@ -89,7 +89,7 @@ const populateDailyActionsAndSummary = async (parentId, clientId, claimsOptions,
     } else {
         extraDailyQuery = ""
     }
-
+    /// fields have been passed to daily actions, next step is to change query components
     if (parentId !== "" && parentId > 0) {
         queryParam = `{'68'.EX.${parentId}}${extraDailyQuery}AND{'8'.OAF.'6/1/23'} AND {'9'.EX.'Closed'}AND{'66'.EX.'false'}`
     } else {

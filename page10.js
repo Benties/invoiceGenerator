@@ -42,9 +42,9 @@ const populateMedicalMonitoringAndSummary = async (Invoice, Contract, qString) =
 	let totalTestFees = 0
 	let testQuery=""
 	if (clientID !== "") {
-	testQuery = `{23.EX.${ clientID }}OR({23.XCT.${clientID}}AND{40.EX.1})`
+	testQuery = `{60.EX.${clientID}}OR({60.XCT.${clientID}}AND{23.EX.${clientID}})`                 // `{23.EX.${ clientID }}
     } else {
-	testQuery = `{48.EX.${ parentId }} `
+	testQuery = `{59.EX.${parentId}}OR({59.XCT.${parentId}}AND{48.EX.${parentId}})`
     }
 
 	let medicalMonitoringContractInfo = await get_records("axisrisk.quickbase.com", "bu5h2c6q4", "3pegtdbzqzzu7b4kuhjv43v4td", [6,7], `{ '15'.EX.${ medicalMonitoring } } `)

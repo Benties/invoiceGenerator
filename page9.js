@@ -123,9 +123,7 @@ let getContractInfo = async (parentId, clientId, Contract) => {
     } else {
         fateDecide = `'23'.EX.${parentId}`
     }
-    let contractArrayOfClient = await get_records("axisrisk.quickbase.com", "bu5h2c6n7", "3pegtdbzqzzu7b4kuhjv43v4td", 
-        [7, 9, 20, 21, 26, , 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 41, 42, 43, 45, 46, 51, 52, 53, 55, 60, 61, 62,73],
-        `{${fateDecide}} AND {'10'.EX.'true'}`)
+    let contractArrayOfClient = await get_records("axisrisk.quickbase.com", "bu5h2c6n7", "3pegtdbzqzzu7b4kuhjv43v4td", [7, 9, 20, 21, 26, , 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 41, 42, 43, 45, 46, 51, 52, 53, 55, 60, 61, 62,73], `{${fateDecide}} AND {'10'.EX.'true'}`)
     let contractData = contractArrayOfClient.data[0]
     console.log(contractData)
 
